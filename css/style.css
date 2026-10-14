@@ -84,13 +84,14 @@ button, a {
     color: var(--muted);
     font-size: 0.92rem;
     transition: color 180ms ease;
+    padding: 15;
 }
 .navbar nav a:hover{
     color: var(--text);
 }
 
 .nav-btn {
-    padding: 9px, 15px;
+    padding: 9px 15px;
     border: 1px solid var(--border);
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.06);
