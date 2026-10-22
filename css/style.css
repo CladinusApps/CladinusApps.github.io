@@ -278,13 +278,13 @@ button, a {
 
 /* About section */
 
-.aboutt-section {
+.about-section {
     width: min(760px, calc(100% - 40));
     margin: 0 auto;
     padding: 55px 30px 90px;
     text-align: center;
 }
-.aboutt-section p:last-child{
+.about-section p:last-child{
     max-width: 600px;
     margin: 22px auto 0;
     color: var(--muted);
