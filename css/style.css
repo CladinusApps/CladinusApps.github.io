@@ -229,21 +229,28 @@ button, a {
 .app-icon {
     display: grid;
     place-items: center;
+    align-items: center;
     width: 58px;
     height: 58px;
     margin-bottom: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    /* border: 1px solid rgba(255, 255, 255, 0.15); */
     border-radius: 17px;
     font-size: 2rem;
     font-weight: 700;
 }
-.media-icon{
-    color: #a8d6ff;
-    background: linear-gradient(145deg, #263f72, #18243d);
+.media-icon img{
+    width: 64px;
+    height: 64px;
+    margin: 0;
+    /* color: #a8d6ff;
+    background: linear-gradient(145deg, #263f72, #18243d); */
 }
-.dock-icon{
-    color: #c5baff;
-    background: linear-gradient(145deg, #51418b, #28223f);
+.dock-icon img{
+    width: 64px;
+    height: 64px;
+    margin: 0;
+    /* color: #c5baff;
+    background: linear-gradient(145deg, #51418b, #28223f); */
 }
 
 .app-category{
