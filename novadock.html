@@ -1,101 +1,203 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Discover NovaDock, a customizable dock-inspired desktop experience for Windows by Cladinus.">
-
-        <title>NovaDock | Cladinus</title>
-        <link rel="stylesheet" href="css/style.css">
-        <script src="js/script.js" defer></script>
-    </head>
-    <body>
-        <header>
-            <section class="navbar">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NovaDock is a free floating dock for Windows 11 with live window previews, icon magnification and a status pill. By Cladinus.">
+    <meta property="og:title" content="NovaDock | Cladinus">
+    <meta property="og:description" content="A free floating dock for Windows 11.">
+    <title>NovaDock | Cladinus</title>
+    <link rel="icon" href="assets/NovaDockIcon1.png">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <section class="navbar">
             <a href="index.html" class="logo">Cladinus<span>.</span></a>
-
-            <nav>
+            <nav aria-label="Main">
                 <a href="index.html">Home</a>
                 <a href="#features">Features</a>
-                <a href="#download">Download</a>
+                <a href="#safety">Safety</a>
+                <a href="#faq">FAQ</a>
             </nav>
-
             <a href="#download" class="nav-btn">Get NovaDock ↗</a>
         </section>
-        
-            <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
-                <img src="assets/menu.svg" alt="">
-            </button>
-            <div class="menu-overlay" id="menu-overlay"></div>
-            <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
-                <a href="index.html">Home</a>
-                <a href="#features">Features</a>
-                <a href="#download">Download</a>
-                <a href="#download" class="nav-btn">Get NovaDock ↗</a>
-            </nav>
-        </header>
 
-        <main>
-            <section class="hero">
-                <p class="eyebrow">Desktop - Windows</p>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu"
+                aria-expanded="false" aria-controls="mobile-menu">
+            <img src="assets/menu.svg" alt="">
+        </button>
+        <div class="menu-overlay" id="menu-overlay"></div>
+        <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+            <a href="index.html">Home</a>
+            <a href="#features">Features</a>
+            <a href="#safety">Safety</a>
+            <a href="#faq">FAQ</a>
+            <a href="#download">Download</a>
+        </nav>
+    </header>
 
-                <h1>
-                    Your desktop,
-                    <span>your style.</span>
-                </h1>
-                <p class="hero-description">
-                    NovaDock brings a dock-inspired experience to windows,
-                    giving your desktop a more personal look.
-                </p>
-                <a href="#features" class="primary-btn">Explore NovaDock →</a>
-            </section>
+    <main>
+        <section class="hero">
+            <img class="hero-icon" src="assets/NovaDockIcon1.png" alt="" width="84" height="84">
+            <p class="eyebrow">DESKTOP · WINDOWS 11 · FREE</p>
+            <h1>Your taskbar, <span>reimagined.</span></h1>
+            <p class="hero-description">
+                NovaDock replaces the Windows 11 taskbar with a floating, auto-hiding dock:
+                live window previews, magnified icons, and a status pill with volume, network,
+                clock and tray icons.
+            </p>
+            <div class="btn-row">
+                <a href="#download" class="primary-btn">Download NovaDock</a>
+                <a href="#features" class="secondary-btn">See features</a>
+            </div>
+            <p class="hero-note">Requires Windows 11 (64-bit)</p>
+            <div class="hero-decor" aria-hidden="true"></div>
+        </section>
 
-            <section class="apps-section">
-                <div class="section-heading" id="features">
-                    <div>
-                        <p class="eyebrow">Features</p>
-                        <h2>A dock that feels yours.</h2>
-                    </div>
+        <!-- Add a screenshot or GIF here once you have one:
+        <section class="shot"><img src="assets/novadock-screenshot.png" alt="NovaDock on a Windows 11 desktop"></section> -->
+
+        <section class="apps-section">
+            <div class="section-heading" id="features">
+                <div>
+                    <p class="eyebrow">FEATURES</p>
+                    <h2>A dock that feels yours.</h2>
                 </div>
-                <div class="app-grid">
-                    <article class="app-card">
-                        <h3>Customizable appearance</h3>
-                        <p class="app-description">Adjust the dock's appearance to suit your desktop and personal preferences.</p>
-                    </article>
+                <p class="section-description">Everything you use every day, a hover away.</p>
+            </div>
 
-                    <article class="app-card">
-                        <h3>Multi-monitor support</h3>
-                        <p class="app-description">Enjoy a dock experience accross your connected displays.</p>
-                    </article>
-                    <article class="app-card">
-                        <h3>Windows integeration</h3>
-                        <p class="app-description">Customize the desktop experience while keeping Windows itself familiar.</p>
-                    </article>
-                    <article class="app-card">
-                        <h3>Quick access</h3>
-                        <p class="app-description">Keep useful desktop features within reach through the dock.</p>
-                    </article>
+            <div class="app-grid grid-3">
+                <article class="app-card">
+                    <h3>Floating, auto-hiding dock</h3>
+                    <p class="app-description">Slides up when you reach the bottom edge and out of the way when you don't. Or keep it always visible.</p>
+                </article>
+                <article class="app-card">
+                    <h3>Icon magnification</h3>
+                    <p class="app-description">Icons grow smoothly under your cursor. Tune the size and reach to taste.</p>
+                </article>
+                <article class="app-card">
+                    <h3>Live window previews</h3>
+                    <p class="app-description">Hover an app to see live thumbnails of every open window. Click to jump to one, or close it right there.</p>
+                </article>
+                <article class="app-card">
+                    <h3>Jump lists and menus</h3>
+                    <p class="app-description">Right-click any app for its own tasks and recent items, plus pin, end task and close. Right-click Start for the full power menu.</p>
+                </article>
+                <article class="app-card">
+                    <h3>Status pill</h3>
+                    <p class="app-description">Clock and date, volume (scroll to adjust), network status and the Notification Center in one tidy pill.</p>
+                </article>
+                <article class="app-card">
+                    <h3>Tray icons</h3>
+                    <p class="app-description">Hidden tray icons live in a popup, with full left, right and middle click support.</p>
+                </article>
+                <article class="app-card">
+                    <h3>Make it yours</h3>
+                    <p class="app-description">Colours, opacity, corner radius, sizes, spacing and animation, all with a live preview before you save.</p>
+                </article>
+                <article class="app-card">
+                    <h3>Multi-monitor</h3>
+                    <p class="app-description">A dock on every display, and it steps aside for fullscreen apps and games.</p>
+                </article>
+                <article class="app-card">
+                    <h3>Pin, reorder, launch</h3>
+                    <p class="app-description">Pin your favourite apps, drag to rearrange, and see at a glance which windows are focused, minimized or need attention.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="safety" class="apps-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">SAFETY</p>
+                    <h2>Built to be safe to try.</h2>
                 </div>
-            </section>
-            <section id="download" class="about-section">
-                <p class="eyebrow">Get NovaDock</p>
-                <h2>Ready to personalize your desktop?</h2>
-                <!-- <p>Explore NovaDock releases and find the available download.</p>
-                <a href="https://github.com/M-H-S-2637/NovaDock-Releases/releases" target="_blank" rel="noopener noreferrer" class="primary-btn">View Downloads ↗</a> -->
-                <div id="release-info-novadock">
-                    <p>Loading the latest release...</p>
-                </div>
+                <p class="section-description">NovaDock changes how your taskbar works, so here is exactly what it does.</p>
+            </div>
+            <div class="app-grid">
+                <article class="app-card">
+                    <h3>Your taskbar always comes back</h3>
+                    <p class="app-description">NovaDock hides the Windows taskbar while it runs. A separate watchdog process restores it even if NovaDock crashes or is force-closed, and uninstalling restores it too.</p>
+                </article>
+                <article class="app-card">
+                    <h3>No telemetry</h3>
+                    <p class="app-description">NovaDock collects no personal data. Its only network activity is checking GitHub for updates, and updates are verified with a SHA-256 checksum before they run.</p>
+                </article>
+            </div>
+            <!-- Keep or remove depending on whether the installer is code-signed -->
+            <p class="fineprint">
+                Because NovaDock hides the taskbar and handles tray icons, Windows SmartScreen or
+                your antivirus may show a warning for a new independent app. If it does, you can
+                verify your download with the checksum below.
+            </p>
+        </section>
+
+        <section id="download" class="about-section">
+            <p class="eyebrow">GET NOVADOCK</p>
+            <h2>Ready to make Windows yours?</h2>
+
+            <div class="download-card">
+                <div id="release-info-novadock"><p>Loading the latest release…</p></div>
 
                 <a href="#" id="download-btn-novadock" class="primary-btn" hidden>Download NovaDock</a>
 
-                <p id="release-error-novadock" hidden>
-                    Unable to load the latest release. Please try again later.
+                <p id="sha-novadock" class="sha" hidden>
+                    SHA-256: <code></code><br>
+                    <span>Verify in PowerShell: <code>Get-FileHash .\NovaDock-setup.exe</code></span>
                 </p>
-            </section>
 
-            <footer class="footer">
-                <a href="index.html" class="logo">Cladinus<span>.</span></a>
-                <p>© <span id="year"></span> Cladinus. All rights reserved.</p>
-            </footer>
-        </main>
-    </body>
+                <p id="release-error-novadock" class="release-error" hidden>
+                    Couldn't load the latest release right now.
+                </p>
+
+                <p class="fineprint">
+                    Windows 11 (64-bit) only · Free ·
+                    <a href="https://github.com/Cladinus/NovaDock-Releases/releases" target="_blank" rel="noopener noreferrer">All releases ↗</a>
+                </p>
+            </div>
+        </section>
+
+        <section id="faq" class="apps-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">FAQ</p>
+                    <h2>Good to know.</h2>
+                </div>
+            </div>
+            <div class="faq">
+                <details>
+                    <summary>Does NovaDock work on Windows 10?</summary>
+                    <p>No. NovaDock is built for Windows 11. Windows 10 handles volume, network, notifications and tray icons differently, so only the basic dock would work there.</p>
+                </details>
+                <details>
+                    <summary>How do I get my normal taskbar back?</summary>
+                    <p>Right-click the NovaDock tray icon and choose Close NovaDock, or just uninstall it. If NovaDock ever crashes or is ended in Task Manager, the watchdog restores your taskbar automatically.</p>
+                </details>
+                <details>
+                    <summary>Is it free?</summary>
+                    <p>Yes, NovaDock is free to download and use.</p>
+                </details>
+                <details>
+                    <summary>Does it collect any data?</summary>
+                    <p>No. It doesn't send telemetry or personal data anywhere. It checks GitHub for new versions and keeps small diagnostic logs on your own PC.</p>
+                </details>
+                <details>
+                    <summary>Why does my antivirus or SmartScreen warn about it?</summary>
+                    <p>NovaDock hides the Windows taskbar and intercepts tray icon messages so it can show them in its own pill. Security software can be cautious about that behaviour in a new app. You can compare the SHA-256 on this page with your download to confirm it's untouched.</p>
+                </details>
+                <details>
+                    <summary>How does updating work?</summary>
+                    <p>NovaDock checks for updates in the background. It always asks before installing, and verifies the download's checksum first.</p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="index.html" class="logo">Cladinus<span>.</span></a>
+        <p>© <span id="year"></span> Cladinus. All rights reserved.</p>
+    </footer>
+</body>
+</html>
