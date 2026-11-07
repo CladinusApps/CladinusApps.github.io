@@ -100,6 +100,7 @@ body.menu-open .menu-overlay { opacity: 1; visibility: visible; }
     line-height: 1.08; letter-spacing: -2.5px;
 }
 .hero h1 span {
+    padding: 0.85rem;
     display: block; color: transparent;
     background: linear-gradient(100deg, var(--accent-blue), var(--accent), #c4a3ff);
     -webkit-background-clip: text; background-clip: text;
