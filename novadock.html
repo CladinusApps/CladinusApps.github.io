@@ -130,7 +130,8 @@
             <p class="fineprint">
                 Because NovaDock hides the taskbar and handles tray icons, Windows SmartScreen or
                 your antivirus may show a warning for a new independent app. If it does, you can
-                verify your download with the checksum below.
+                verify your download with the checksum below and follow the steps in <a href="#faq">
+                FAQ</a> for help.
             </p>
         </section>
 
@@ -167,6 +168,19 @@
                 </div>
             </div>
             <div class="faq">
+                <details class="install-help">
+                <summary>Windows says "Windows protected your PC"?</summary>
+                <p>New independent apps haven't built up reputation with Microsoft yet, so Windows shows
+                this warning for NovaDock's installer. It is expected. To continue:</p>
+                <ol>
+                    <li>Compare the SHA-256 above with your download
+                        (<code>Get-FileHash .\NovaDock-setup.exe</code> in PowerShell).</li>
+                    <li>On the blue screen, click <strong>More info</strong>, then <strong>Run anyway</strong>.</li>
+                </ol>
+                <p>If you don't see "Run anyway", right-click the downloaded file, choose
+                <strong>Properties</strong>, tick <strong>Unblock</strong> at the bottom, click OK,
+                and run it again.</p>
+            </details>
                 <details>
                     <summary>Does NovaDock work on Windows 10?</summary>
                     <p>No. NovaDock is built for Windows 11. Windows 10 handles volume, network, notifications and tray icons differently, so only the basic dock would work there.</p>
