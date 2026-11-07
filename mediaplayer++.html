@@ -10,7 +10,8 @@
         <script src="js/script.js" defer></script>
     </head>
     <body>
-        <header class="navbar">
+        <header>
+            <section class="navbar">
             <a href="index.html" class="logo">Cladinus<span>.</span></a>
 
             <nav>
@@ -19,7 +20,19 @@
                 <a href="#download">Download</a>
             </nav>
 
-            <a href="#download" class="nav-btn">Get MediaPlayer++</a>
+            <a href="#download" class="nav-btn">Get MediaPlayer++ ↗</a>
+        </section>
+        
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+                <img src="assets/menu.svg" alt="">
+            </button>
+            <div class="menu-overlay" id="menu-overlay"></div>
+            <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+                <a href="index.html">Home</a>
+                <a href="#features">Features</a>
+                <a href="#download">Download</a>
+                <a href="#download" class="nav-btn">Get MediaPlayer++ ↗</a>
+            </nav>
         </header>
 
         <main>
