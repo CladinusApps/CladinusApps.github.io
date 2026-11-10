@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nova Files Observer is a free, instant file search for Windows with live updates. Find any file by name, type, size or date. By Cladinus.">
+    <meta property="og:title" content="Nova Files Observer | Cladinus">
+    <meta property="og:description" content="Instant file search for Windows, with live updates.">
+    <title>Nova Files Observer | Cladinus</title>
+    <link rel="icon" href="assets/NovaFilesObserverIcon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <section class="navbar">
+            <a href="index.html" class="logo">Cladinus<span>.</span></a>
+            <nav aria-label="Main">
+                <a href="index.html">Home</a>
+                <a href="#features">Features</a>
+                <a href="#safety">Safety</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <a href="#download" class="nav-btn">Get Nova Files Observer ↗</a>
+        </section>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu"
+                aria-expanded="false" aria-controls="mobile-menu">
+            <img src="assets/menu.svg" alt="">
+        </button>
+        <div class="menu-overlay" id="menu-overlay"></div>
+        <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+            <a href="index.html">Home</a>
+            <a href="#features">Features</a>
+            <a href="#safety">Safety</a>
+            <a href="#faq">FAQ</a>
+            <a href="#download">Download</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <!-- Put your app icon at assets/NovaFilesObserverIcon.png (or change the file name here and in the head) -->
+            <img class="hero-icon" src="assets/NovaFilesObserverIcon.png" alt="" width="84" height="84">
+            <p class="eyebrow">DESKTOP · WINDOWS · FREE</p>
+            <h1>Find any file, <span>instantly.</span></h1>
+            <p class="hero-description">
+                Nova Files Observer indexes your drives and searches them as you type. When files are
+                created, changed or deleted, the list updates by itself.
+            </p>
+            <div class="btn-row">
+                <a href="#download" class="primary-btn">Download Nova Files Observer</a>
+                <a href="#features" class="secondary-btn">See features</a>
+            </div>
+            <p class="hero-note">Requires Windows 10 or 11 (64-bit)</p>
+            <div class="hero-decor" aria-hidden="true"></div>
+        </section>
+
+        <!-- Add a screenshot here once you have one:
+        <section class="shot"><img src="assets/novafilesobserver-screenshot.png" alt="Nova Files Observer searching a drive"></section> -->
+
+        <section class="apps-section">
+            <div class="section-heading" id="features">
+                <div>
+                    <p class="eyebrow">FEATURES</p>
+                    <h2>Search that keeps up.</h2>
+                </div>
+                <p class="section-description">Type a few words and the matching files appear.</p>
+            </div>
+
+            <div class="app-grid grid-3">
+                <article class="app-card">
+                    <h3>Search as you type</h3>
+                    <p class="app-description">Type words from a file name to find everything that contains all of them. Put a minus in front of a word to leave matches out.</p>
+                </article>
+                <article class="app-card">
+                    <h3>Filters for type, size and date</h3>
+                    <p class="app-description">Narrow results with <code>ext:pdf</code>, <code>size:&gt;100mb</code> or <code>dm:last7d</code>. A term with a slash matches the full path.</p>
+                </article>
+                <article class="app-card">
+                    <h3>Live updates</h3>
+                    <p class="app-description">New, changed, renamed and deleted files show up as they happen, so the list never goes stale.</p>
+                </article>
+                <article class="app-card">
+                    <h3>Recent changes</h3>
+                    <p class="app-description">See only what changed, newest first. Click the coloured chips to filter by event, and pause the list while you read it.</p>
+                </article>
+                <article class="app-card">
+                    <h3>Fast on whole drives</h3>
+                    <p class="app-description">With administrator rights it follows the NTFS change journal directly. Without them it still works by scanning and watching folders.</p>
+                </article>
+                <article class="app-card">
+                    <h3>Right-click actions</h3>
+                    <p class="app-description">Open a file, show it in its folder, copy it, or hide it from the list. Columns resize, and double-clicking a border fits it to the content.</p>
+                </article>
+                <article class="app-card">
+                    <h3>Stays in the tray</h3>
+                    <p class="app-description">Optionally start hidden in the tray when you sign in, so your index is ready before you need it.</p>
+                </article>
+                <article class="app-card">
+                    <h3>You decide what is listed</h3>
+                    <p class="app-description">Choose what shows up: exclude folders you don't want in the results, and decide whether hidden files and folders are included.</p>
+                </article>
+                <article class="app-card">
+                    <h3>Looks the way you like</h3>
+                    <p class="app-description">Pick a theme and a 24-hour, 12-hour or relative time format in Settings.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="safety" class="apps-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">SAFETY</p>
+                    <h2>Here is exactly what it does.</h2>
+                </div>
+                <p class="section-description">Fast file search needs deep access to your drives, so we explain it.</p>
+            </div>
+            <div class="app-grid">
+                <article class="app-card">
+                    <h3>Why it asks for administrator rights</h3>
+                    <p class="app-description">Reading the NTFS change journal needs administrator rights. That is what lets it catch every change instantly. If you decline the Windows prompt, the app still runs and follows changes by watching folders, which can miss some on very busy drives.</p>
+                </article>
+                <article class="app-card">
+                    <h3>Only names, sizes and dates</h3>
+                    <p class="app-description">It builds its index from file names, sizes and dates. It doesn't read the contents of your files.</p>
+                </article>
+                <article class="app-card">
+                    <h3>No network, no telemetry</h3>
+                    <p class="app-description">Nova Files Observer doesn't connect to the internet and collects no data. Its index and settings stay on your PC.</p>
+                </article>
+                <article class="app-card">
+                    <h3>Start with Windows is optional</h3>
+                    <p class="app-description">The installer only sets up start at sign-in if you tick that box. It appears in Task Manager under Startup apps, and uninstalling removes its start-up task.</p>
+                </article>
+            </div>
+            <p class="fineprint">
+                Nova Files Observer isn't code-signed yet, so Windows SmartScreen, Smart App Control or your
+                antivirus may warn about it. You can check your download with the checksum below, and the
+                <a href="#faq">FAQ</a> explains what to do. A Microsoft Store version, which Microsoft signs, is planned.
+            </p>
+        </section>
+
+        <section id="download" class="about-section">
+            <p class="eyebrow">GET NOVA FILES OBSERVER</p>
+            <h2>Ready to find things faster?</h2>
+
+            <div class="download-card">
+                <div id="release-info-novafiles"><p>Loading the latest release…</p></div>
+
+                <a href="#" id="download-btn-novafiles" class="primary-btn" hidden>Download Nova Files Observer</a>
+
+                <p id="sha-novafiles" class="sha" hidden>
+                    SHA-256: <code></code><br>
+                    <span>Verify in PowerShell: <code class="sha-file">Get-FileHash .\NovaFilesObserver-Setup.exe</code></span>
+                </p>
+
+                <p id="release-error-novafiles" class="release-error" hidden>
+                    Couldn't load the latest release right now.
+                    <a href="https://github.com/cladinus/NovaFilesObserver-Releases/releases" target="_blank" rel="noopener noreferrer">Open the releases page ↗</a>
+                </p>
+
+                <p class="fineprint">
+                    Windows 10 or 11 (64-bit) · Free ·
+                    <a href="https://github.com/cladinus/NovaFilesObserver-Releases/releases" target="_blank" rel="noopener noreferrer">All releases ↗</a>
+                </p>
+            </div>
+        </section>
+
+        <section id="faq" class="apps-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">FAQ</p>
+                    <h2>Good to know.</h2>
+                </div>
+            </div>
+            <div class="faq">
+                <details>
+                    <summary>Windows says "Windows protected your PC"?</summary>
+                    <p>New independent apps haven't built up reputation with Microsoft yet, so SmartScreen shows this
+                    warning for the installer. It is expected. To continue:</p>
+                    <ol>
+                        <li>Compare the SHA-256 above with your download
+                            (run the PowerShell command shown above in the folder where you saved it).</li>
+                        <li>On the blue screen, click <strong>More info</strong>, then <strong>Run anyway</strong>.</li>
+                    </ol>
+                    <p>If you don't see "Run anyway", right-click the downloaded file, choose
+                    <strong>Properties</strong>, tick <strong>Unblock</strong> at the bottom, click OK,
+                    and run it again.</p>
+                </details>
+                <details>
+                    <summary>Windows says the app is blocked, with no "Run anyway" option?</summary>
+                    <p>That is Smart App Control, a Windows 11 feature that blocks apps without a trusted signature,
+                    with no way to allow a single app. Nova Files Observer isn't signed yet, so on PCs where Smart App
+                    Control is on, Windows blocks it.</p>
+                    <p>Your options are to wait for the Microsoft Store version, or to turn Smart App Control off in
+                    <strong>Windows Security &gt; App &amp; browser control &gt; Smart App Control</strong>. Turning it off
+                    lowers your protection against unsigned programs, so only do that if you're comfortable with it.
+                    On recent Windows 11 updates you can turn it back on later; on older versions you can't without
+                    resetting Windows.</p>
+                </details>
+                <details>
+                    <summary>Why does my antivirus warn about it?</summary>
+                    <p>It asks for administrator rights, reads drives at a low level, and isn't signed, which security
+                    software can be cautious about in a new app. Compare the SHA-256 on this page with your download to
+                    confirm it's untouched. If your antivirus quarantines it, you can report a false positive to the
+                    vendor.</p>
+                </details>
+                <details>
+                    <summary>Does it need administrator rights to run?</summary>
+                    <p>No. With them it reads the NTFS change journal and never misses a change. Without them it scans
+                    folders and watches for changes, which is a little less complete. If you decline the Windows
+                    prompt at start-up, it runs in that mode.</p>
+                </details>
+                <details>
+                    <summary>How do I remove it completely?</summary>
+                    <p>Uninstall it from Windows Settings &gt; Apps. This also removes its start-up task if you enabled it.</p>
+                </details>
+                <details>
+                    <summary>Does it collect any data?</summary>
+                    <p>No. It doesn't connect to the internet or send anything anywhere. It indexes file names, sizes
+                    and dates on your own PC and doesn't read what's inside your files.</p>
+                </details>
+                <details>
+                    <summary>Is it free?</summary>
+                    <p>Yes, Nova Files Observer is free to download and use.</p>
+                </details>
+                <details>
+                    <summary>Something didn't work. How do I report it?</summary>
+                    <p>Open an issue on the
+                    <a href="https://github.com/cladinus/NovaFilesObserver-Releases/issues" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                    and mention your Windows version, whether Smart App Control is on, and what you saw.
+                    That helps a lot.</p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="index.html" class="logo">Cladinus<span>.</span></a>
+        <p>© <span id="year"></span> Cladinus. All rights reserved.</p>
+    </footer>
+</body>
+</html>

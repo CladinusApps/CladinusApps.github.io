@@ -169,18 +169,29 @@
             </div>
             <div class="faq">
                 <details class="install-help">
-                <summary>Windows says "Windows protected your PC"?</summary>
-                <p>New independent apps haven't built up reputation with Microsoft yet, so Windows shows
-                this warning for NovaDock's installer. It is expected. To continue:</p>
-                <ol>
-                    <li>Compare the SHA-256 above with your download
-                        (<code>Get-FileHash .\NovaDock-setup.exe</code> in PowerShell).</li>
-                    <li>On the blue screen, click <strong>More info</strong>, then <strong>Run anyway</strong>.</li>
-                </ol>
-                <p>If you don't see "Run anyway", right-click the downloaded file, choose
-                <strong>Properties</strong>, tick <strong>Unblock</strong> at the bottom, click OK,
-                and run it again.</p>
-            </details>
+                    <summary>Windows says "Windows protected your PC"?</summary>
+                    <p>New independent apps haven't built up reputation with Microsoft yet, so Windows shows
+                    this warning for NovaDock's installer. It is expected. To continue:</p>
+                    <ol>
+                        <li>Compare the SHA-256 above with your download
+                            (<code>Get-FileHash .\NovaDock-setup.exe</code> in PowerShell).</li>
+                        <li>On the blue screen, click <strong>More info</strong>, then <strong>Run anyway</strong>.</li>
+                    </ol>
+                    <p>If you don't see "Run anyway", right-click the downloaded file, choose
+                    <strong>Properties</strong>, tick <strong>Unblock</strong> at the bottom, click OK,
+                    and run it again.</p>
+                </details>
+                <details>
+                    <summary>Windows says the app is blocked, with no "Run anyway" option?</summary>
+                    <p>That is Smart App Control, a Windows 11 feature that blocks apps without a trusted signature,
+                    with no way to allow a single app. Nova Files Observer isn't signed yet, so on PCs where Smart App
+                    Control is on, Windows blocks it.</p>
+                    <p>Your options are to wait for the Microsoft Store version, or to turn Smart App Control off in
+                    <strong>Windows Security &gt; App &amp; browser control &gt; Smart App Control</strong>. Turning it off
+                    lowers your protection against unsigned programs, so only do that if you're comfortable with it.
+                    On recent Windows 11 updates you can turn it back on later; on older versions you can't without
+                    resetting Windows.</p>
+                </details>
                 <details>
                     <summary>Does NovaDock work on Windows 10?</summary>
                     <p>No. NovaDock is built for Windows 11. Windows 10 handles volume, network, notifications and tray icons differently, so only the basic dock would work there.</p>

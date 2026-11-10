@@ -2,6 +2,7 @@
    Change the repo here if either app's releases move. */
 const NOVADOCK_REPO    = "Cladinus/NovaDock-Releases";
 const MEDIAPLAYER_REPO = "Cladinus/MediaPlayerPlusPlus-Releases";   // update if different
+const NOVAFILES_REPO   = "Cladinus/NovaFilesObserver-Releases";
 
 /* ── Footer year ───────────────────────────────────────── */
 const yearElement = document.querySelector("#year");
@@ -48,6 +49,9 @@ async function loadRelease({ repo, infoId, buttonId, errorId, shaId }) {
         const shaBox = shaId && document.querySelector(`#${shaId}`);
         if (shaBox && typeof installer.digest === "string" && installer.digest.startsWith("sha256:")) {
             shaBox.querySelector("code").textContent = installer.digest.slice(7);
+            // show the real file name in the PowerShell command, if this page has one
+            const cmd = shaBox.querySelector(".sha-file");
+            if (cmd) cmd.textContent = "Get-FileHash .\\" + installer.name;
             shaBox.hidden = false;
         }
         error.hidden = true;
@@ -64,6 +68,13 @@ loadRelease({
     buttonId: "download-btn-novadock",
     errorId: "release-error-novadock",
     shaId: "sha-novadock"
+});
+loadRelease({
+    repo: NOVAFILES_REPO,
+    infoId: "release-info-novafiles",
+    buttonId: "download-btn-novafiles",
+    errorId: "release-error-novafiles",
+    shaId: "sha-novafiles"
 });
 loadRelease({
     repo: MEDIAPLAYER_REPO,
