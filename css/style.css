@@ -143,7 +143,7 @@ body.menu-open .menu-overlay { opacity: 1; visibility: visible; }
 .section-description { max-width: 300px; color: var(--muted); font-size: 0.95rem; }
 
 .app-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
-.app-grid.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.app-grid.grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
 .app-card {
     padding: 30px; background: var(--surface);
@@ -213,6 +213,12 @@ code {
 }
 .footer p { color: var(--muted); font-size: 0.85rem; }
 .footer p#contact { color: var(--muted); font-size: 1.2rem; }
+.footer #pages {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: var(--muted);
+}
 
 /* ── Scroll reveal ────────────────────────────────────── */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 700ms ease, transform 700ms ease; }
