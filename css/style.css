@@ -197,6 +197,7 @@ code {
 .faq details[open] { border-color: rgba(139, 123, 255, 0.35); }
 .faq summary { cursor: pointer; font-weight: 650; }
 .faq p { margin-top: 12px; color: var(--muted); font-size: 0.95rem; }
+.faq a {color: var(--accent);}
 .install-help {
     margin-top: 22px; padding: 14px 18px; text-align: left;
     background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border); border-radius: 14px;
