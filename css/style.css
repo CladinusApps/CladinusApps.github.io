@@ -175,6 +175,9 @@ body.menu-open .menu-overlay { opacity: 1; visibility: visible; }
 .download-card h3 { font-size: 1.6rem; letter-spacing: -0.5px; }
 .download-card p { margin-top: 8px; color: var(--muted); }
 .download-card .primary-btn { margin-top: 22px; }
+.dl-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.dl-buttons .primary-btn[hidden] { display: none; }
+.install-help code { word-break: break-word; }
 .release-notes {
     max-height: 200px; overflow: auto; margin: 16px auto 0; padding: 14px 16px;
     text-align: left; white-space: pre-wrap; font-size: 0.9rem; color: var(--muted);

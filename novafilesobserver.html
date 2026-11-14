@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nova Files Observer is a free, instant file search for Windows with live updates. Find any file by name, type, size or date. By Cladinus.">
+    <meta name="description" content="Nova Files Observer is a free, instant file search for Windows and Linux with live updates. Find any file by name, type, size or date. By Cladinus.">
     <meta property="og:title" content="Nova Files Observer | Cladinus">
-    <meta property="og:description" content="Instant file search for Windows, with live updates.">
+    <meta property="og:description" content="Instant file search for Windows and Linux, with live updates.">
     <title>Nova Files Observer | Cladinus</title>
     <link rel="icon" href="assets/NovaFilesObserverIcon.png">
     <link rel="stylesheet" href="css/style.css">
@@ -42,7 +42,7 @@
         <section class="hero" id="home">
             <!-- Put your app icon at assets/NovaFilesObserverIcon.png (or change the file name here and in the head) -->
             <img class="hero-icon" src="assets/NovaFilesObserverIcon.png" alt="" width="84" height="84">
-            <p class="eyebrow">DESKTOP · WINDOWS · FREE</p>
+            <p class="eyebrow">UTILITY · WINDOWS · LINUX</p>
             <h1>Find any file, <span>instantly.</span></h1>
             <p class="hero-description">
                 Nova Files Observer indexes your drives and searches them as you type. When files are
@@ -52,7 +52,7 @@
                 <a href="#download" class="primary-btn">Download Nova Files Observer</a>
                 <a href="#features" class="secondary-btn">See features</a>
             </div>
-            <p class="hero-note">Requires Windows 10 or 11 (64-bit)</p>
+            <p class="hero-note">Windows 10 or 11 (64-bit) or 64-bit Linux</p>
             <div class="hero-decor" aria-hidden="true"></div>
         </section>
 
@@ -87,7 +87,7 @@
                 </article>
                 <article class="app-card">
                     <h3>Fast on whole drives</h3>
-                    <p class="app-description">With administrator rights it follows the NTFS change journal directly. Without them it still works by scanning and watching folders.</p>
+                    <p class="app-description">On Windows with administrator rights it follows the NTFS change journal directly. Without them, and on Linux, it scans your folders and watches them for changes.</p>
                 </article>
                 <article class="app-card">
                     <h3>Right-click actions</h3>
@@ -95,7 +95,7 @@
                 </article>
                 <article class="app-card">
                     <h3>Stays in the tray</h3>
-                    <p class="app-description">Optionally start hidden in the tray when you sign in, so your index is ready before you need it.</p>
+                    <p class="app-description">On Windows you can optionally start hidden in the tray when you sign in, so your index is ready before you need it.</p>
                 </article>
                 <article class="app-card">
                     <h3>You decide what is listed</h3>
@@ -118,8 +118,8 @@
             </div>
             <div class="app-grid">
                 <article class="app-card">
-                    <h3>Why it asks for administrator rights</h3>
-                    <p class="app-description">Reading the NTFS change journal needs administrator rights. That is what lets it catch every change instantly. If you decline the Windows prompt, the app still runs and follows changes by watching folders, which can miss some on very busy drives.</p>
+                    <h3>Why it asks for administrator rights (Windows)</h3>
+                    <p class="app-description">Reading the NTFS change journal needs administrator rights. That is what lets it catch every change instantly. If you decline the Windows prompt, the app still runs and follows changes by watching folders, which can miss some on very busy drives. On Linux it never needs root to run: it walks your folders and follows changes with inotify.</p>
                 </article>
                 <article class="app-card">
                     <h3>Only names, sizes and dates</h3>
@@ -130,13 +130,13 @@
                     <p class="app-description">Nova Files Observer doesn't connect to the internet and collects no data. Its index and settings stay on your PC.</p>
                 </article>
                 <article class="app-card">
-                    <h3>Start with Windows is optional</h3>
-                    <p class="app-description">The installer only sets up start at sign-in if you tick that box. It appears in Task Manager under Startup apps, and uninstalling removes its start-up task.</p>
+                    <h3>Start at sign-in is optional</h3>
+                    <p class="app-description">On Windows, the installer only sets up start at sign-in if you tick that box. It appears in Task Manager under Startup apps, and uninstalling removes its start-up task.</p>
                 </article>
             </div>
             <p class="fineprint">
-                Nova Files Observer isn't code-signed yet, so Windows SmartScreen, Smart App Control or your
-                antivirus may warn about it. You can check your download with the checksum below, and the
+                The Windows installer isn't code-signed yet, so Windows SmartScreen, Smart App Control or your
+                antivirus may warn about it. You can check either download with the checksum below, and the
                 <a href="#faq">FAQ</a> explains what to do. A Microsoft Store version, which Microsoft signs, is planned.
             </p>
         </section>
@@ -148,12 +148,35 @@
             <div class="download-card">
                 <div id="release-info-novafiles"><p>Loading the latest release…</p></div>
 
-                <a href="#" id="download-btn-novafiles" class="primary-btn" hidden>Download Nova Files Observer</a>
+                <div class="dl-buttons">
+                    <a href="#" id="download-btn-novafiles" class="primary-btn" hidden>Download for Windows</a>
+                    <a href="#" id="download-btn-novafiles-linux" class="primary-btn" hidden>Download for Linux</a>
+                </div>
 
                 <p id="sha-novafiles" class="sha" hidden>
-                    SHA-256: <code></code><br>
+                    Windows SHA-256: <code></code><br>
                     <span>Verify in PowerShell: <code class="sha-file">Get-FileHash .\NovaFilesObserver-Setup.exe</code></span>
                 </p>
+
+                <p id="sha-novafiles-linux" class="sha" hidden>
+                    Linux SHA-256: <code></code><br>
+                    <span>Verify in a terminal: <code class="sha-file">sha256sum NovaFilesObserver-linux-x64.tar.gz</code></span>
+                </p>
+
+                <details class="install-help">
+                    <summary>How to install on Linux</summary>
+                    <p>The Linux download is a <code>.tar.gz</code> archive, not an installer program. It holds a
+                    self-contained app, so you don't need to install .NET. Open a terminal in the folder you
+                    downloaded it to, then:</p>
+                    <ol>
+                        <li>Unpack it: <code>tar -xzf NovaFilesObserver-*-linux-x64.tar.gz</code></li>
+                        <li>Go into the new folder: <code>cd NovaFilesObserver-*-linux-x64</code></li>
+                        <li>Install for your user: <code>./install.sh</code></li>
+                    </ol>
+                    <p>To install for all users instead, run <code>sudo PREFIX=/usr/local ./install.sh</code>.
+                    To skip installing, run the <code>NovaFilesObserver</code> file in that folder directly.
+                    To remove it later, run <code>./uninstall.sh</code> from the same folder.</p>
+                </details>
 
                 <p id="release-error-novafiles" class="release-error" hidden>
                     Couldn't load the latest release right now.
@@ -161,7 +184,7 @@
                 </p>
 
                 <p class="fineprint">
-                    Windows 10 or 11 (64-bit) · Free ·
+                    Windows 10 or 11 (64-bit) or 64-bit Linux · Free ·
                     <a href="https://github.com/cladinus/NovaFilesObserver-Releases/releases" target="_blank" rel="noopener noreferrer">All releases ↗</a>
                 </p>
             </div>
@@ -200,7 +223,7 @@
                     resetting Windows.</p>
                 </details>
                 <details>
-                    <summary>Why does my antivirus warn about it?</summary>
+                    <summary>Why does my antivirus warn about it? (Windows)</summary>
                     <p>It asks for administrator rights, reads drives at a low level, and isn't signed, which security
                     software can be cautious about in a new app. Compare the SHA-256 on this page with your download to
                     confirm it's untouched. If your antivirus quarantines it, you can report a false positive to the
@@ -208,13 +231,21 @@
                 </details>
                 <details>
                     <summary>Does it need administrator rights to run?</summary>
-                    <p>No. With them it reads the NTFS change journal and never misses a change. Without them it scans
+                    <p>No. On Windows, with them it reads the NTFS change journal and never misses a change. Without them it scans
                     folders and watches for changes, which is a little less complete. If you decline the Windows
-                    prompt at start-up, it runs in that mode.</p>
+                    prompt at start-up, it runs in that mode. On Linux it runs as a normal user and watches folders
+                    with inotify.</p>
                 </details>
                 <details>
                     <summary>How do I remove it completely?</summary>
-                    <p>Uninstall it from Windows Settings &gt; Apps. This also removes its start-up task if you enabled it.</p>
+                    <p>On Windows, uninstall it from Settings &gt; Apps. This also removes its start-up task if you
+                    enabled it. On Linux, run <code>./uninstall.sh</code> from the folder you unpacked.</p>
+                </details>
+                <details>
+                    <summary>How do I install it on Linux?</summary>
+                    <p>Download the Linux archive, unpack it with <code>tar -xzf</code>, and run <code>./install.sh</code>
+                    inside the folder. The steps are under the download button. If you'd rather not install anything,
+                    you can run the <code>NovaFilesObserver</code> file from the unpacked folder directly.</p>
                 </details>
                 <details>
                     <summary>Does it collect any data?</summary>
@@ -229,7 +260,7 @@
                     <summary>Something didn't work. How do I report it?</summary>
                     <p>Open an issue on the
                     <a href="https://github.com/cladinus/NovaFilesObserver-Releases/issues" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                    and mention your Windows version, whether Smart App Control is on, and what you saw.
+                    and mention your Windows version (or Linux distribution), whether Smart App Control is on if you use Windows, and what you saw.
                     That helps a lot. You need a free GitHub account for this.</p>
                     <p>Prefer email? Write to <a href="mailto:cladinus@gmail.com?subject=Nova%20Files%20Observer%20feedback">cladinus@gmail.com</a>
                     with the same details. Please don't include private file names.</p>

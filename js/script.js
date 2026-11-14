@@ -9,10 +9,27 @@ const yearElement = document.querySelector("#year");
 if (yearElement) yearElement.textContent = new Date().getFullYear();
 
 /* ── Latest release loader ─────────────────────────────── */
-async function loadRelease({ repo, infoId, buttonId, errorId, shaId }) {
+// Shows a SHA-256 box for one release asset (GitHub adds "sha256:<hash>" to each uploaded asset).
+function showSha(shaId, asset, commandPrefix) {
+    const shaBox = shaId && document.querySelector(`#${shaId}`);
+    if (!shaBox || !asset || typeof asset.digest !== "string" || !asset.digest.startsWith("sha256:")) return;
+    shaBox.querySelector("code").textContent = asset.digest.slice(7);
+    const cmd = shaBox.querySelector(".sha-file");   // show the real file name in the command, if this page has one
+    if (cmd) cmd.textContent = commandPrefix + asset.name;
+    shaBox.hidden = false;
+}
+
+function showDownload(button, asset) {
+    button.href = asset.browser_download_url;
+    button.setAttribute("download", asset.name);
+    button.hidden = false;
+}
+
+async function loadRelease({ repo, infoId, buttonId, errorId, shaId, linuxButtonId, linuxShaId }) {
     const info = document.querySelector(`#${infoId}`);
     const button = document.querySelector(`#${buttonId}`);
     const error = document.querySelector(`#${errorId}`);
+    const linuxButton = linuxButtonId && document.querySelector(`#${linuxButtonId}`);
     if (!info || !button || !error) return;   // this page doesn't have that app
 
     try {
@@ -22,8 +39,13 @@ async function loadRelease({ repo, infoId, buttonId, errorId, shaId }) {
         if (!response.ok) throw new Error("Could not retrieve the latest release.");
 
         const release = await response.json();
-        const installer = (release.assets || []).find(a => a.name.toLowerCase().endsWith(".exe"));
-        if (!installer) throw new Error("No installer found in the latest release.");
+        const assets = release.assets || [];
+        const installer = assets.find(a => a.name.toLowerCase().endsWith(".exe"));
+        // Linux package: a tar archive (.tar.gz, .tgz, .tar.xz or .tar.zip)
+        const linuxPackage = linuxButton
+            ? assets.find(a => /\.(tar\.gz|tgz|tar\.xz|tar\.zip)$/i.test(a.name))
+            : null;
+        if (!installer && !linuxPackage) throw new Error("No installer found in the latest release.");
 
         const version = document.createElement("h3");
         version.textContent = release.tag_name;
@@ -41,18 +63,13 @@ async function loadRelease({ repo, infoId, buttonId, errorId, shaId }) {
             info.append(notes);
         }
 
-        button.href = installer.browser_download_url;
-        button.setAttribute("download", installer.name);
-        button.hidden = false;
-
-        // GitHub adds "sha256:<hash>" to each uploaded asset.
-        const shaBox = shaId && document.querySelector(`#${shaId}`);
-        if (shaBox && typeof installer.digest === "string" && installer.digest.startsWith("sha256:")) {
-            shaBox.querySelector("code").textContent = installer.digest.slice(7);
-            // show the real file name in the PowerShell command, if this page has one
-            const cmd = shaBox.querySelector(".sha-file");
-            if (cmd) cmd.textContent = "Get-FileHash .\\" + installer.name;
-            shaBox.hidden = false;
+        if (installer) {
+            showDownload(button, installer);
+            showSha(shaId, installer, "Get-FileHash .\\");
+        }
+        if (linuxPackage) {
+            showDownload(linuxButton, linuxPackage);
+            showSha(linuxShaId, linuxPackage, "sha256sum ");
         }
         error.hidden = true;
     } catch (err) {
@@ -74,7 +91,9 @@ loadRelease({
     infoId: "release-info-novafiles",
     buttonId: "download-btn-novafiles",
     errorId: "release-error-novafiles",
-    shaId: "sha-novafiles"
+    shaId: "sha-novafiles",
+    linuxButtonId: "download-btn-novafiles-linux",
+    linuxShaId: "sha-novafiles-linux"
 });
 loadRelease({
     repo: MEDIAPLAYER_REPO,
