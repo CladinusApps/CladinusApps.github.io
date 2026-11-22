@@ -1,6 +1,6 @@
 /* ── Release sources ──────────────────────────────────────
    Change the repo here if either app's releases move. */
-const NOVADOCK_REPO    = "Cladinus/NovaDock-Releases";
+const NOVADOCK_REPO    = "M-H-S-2637/NovaDock-Releases";
 const MEDIAPLAYER_REPO = "Cladinus/MediaPlayerPlusPlus-Releases";   // update if different
 const NOVAFILES_REPO   = "Cladinus/NovaFilesObserver-Releases";
 
